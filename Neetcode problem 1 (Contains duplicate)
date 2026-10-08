@@ -1,0 +1,19 @@
+Learnt about Array.sort() method. It sorts an unsorted array and stores it in the same variable. It doesn't require or need extra variable to save the sorted array. 
+Time complexity of this method: O(nlog n)
+Solution of the problem:
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums); // Doesn't require another variable. It simply sorts within nums. Now the nums has the sorted array.
+        boolean b=false;
+
+        for(int i=0,j=1; i<nums.length-1 && j<nums.length; i++,j++){
+            if(nums[i]==nums[j]){
+                b=true;
+                return b;
+            }
+        }
+
+        return b;
+    }
+}
